@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+ 
+ 
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+ 
+	<LinearLayout 
+		style="@style/Frame"
+	    android:orientation="vertical"
+	    android:layout_height="fill_parent" 
+	    android:layout_width="match_parent">
+		
+		<TextView
+			style="@style/Label"
+		    android:layout_width="fill_parent" 
+		    android:layout_height="wrap_content" 
+		    android:text="@string/money"/>
+		
+		<LinearLayout
+			android:orientation="horizontal"
+			android:layout_height="wrap_content" 
+			android:layout_width="match_parent">
+		
+			<EditText 
+				android:id="@+id/money"
+				android:text=""			
+			    android:hint="@string/money_hint"
+				android:inputType="numberDecimal" 
+			 	android:layout_width="0px"
+                android:layout_height="wrap_content"
+                android:layout_weight="7"
+                android:gravity="left|center_vertical"/>
+                			
+			<Button
+				style="@style/Button"
+				android:id="@+id/in_out" 
+				android:text="@string/expense" 
+			 	android:layout_width="0px"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:gravity="center_horizontal|center_vertical"/>
+                			
+		</LinearLayout>
+			
+		<TextView 
+			style="@style/Label"
+			android:text="@string/category" 
+			android:layout_height="wrap_content" 
+			android:layout_width="wrap_content"/>
+		
+		<AutoCompleteTextView 
+			android:layout_height="wrap_content" 
+			android:layout_width="match_parent" 
+			android:id="@+id/category"
+			android:text=""
+		    android:hint="@string/category_hint"
+			android:completionThreshold="1"/>
+	
+		<TextView 
+			style="@style/Label"
+			android:layout_height="wrap_content" 
+			android:layout_width="wrap_content"
+			android:text="@string/person"/>
+						
+		<AutoCompleteTextView 
+			android:layout_height="wrap_content" 
+			android:layout_width="match_parent" 
+			android:text="" 
+		    android:hint="@string/receiver"
+			android:completionThreshold="1" 
+			android:id="@+id/partner"/>
+			
+		<TextView 
+			style="@style/Label"
+			android:layout_height="wrap_content" 
+			android:layout_width="wrap_content" 
+			android:text="@string/date"/>
+	
+		<LinearLayout
+			android:orientation="horizontal"
+			android:layout_height="wrap_content" 
+			android:layout_width="match_parent">
+			
+			<Button
+				style="@style/Button"
+			 	android:layout_width="0px"
+                android:layout_height="wrap_content"
+                android:layout_weight="7"
+                android:gravity="left|center_vertical"
+				android:text="Date" 
+				android:id="@+id/date"/>
+			
+			<Button 
+				style="@style/Button"
+				android:layout_width="0px"
+				android:layout_height="wrap_content"
+				android:layout_weight="4"
+				android:gravity="left|center_vertical"
+				android:text="Time"
+				android:id="@+id/time"/>
+
+		</LinearLayout>
+			
+		<TextView
+			style="@style/Label"
+			android:layout_height="wrap_content" 
+			android:layout_width="wrap_content"
+			android:text="@string/comment"/>
+	
+		<EditText
+			android:id="@+id/comment"
+			android:hint="@string/comment_hint"
+			android:capitalize="sentences"
+			android:text=""
+			android:lines="3"
+			android:gravity="top"
+			android:layout_height="wrap_content"
+			android:layout_width="match_parent"/>
+	
+		<LinearLayout
+			style="@style/Buttons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"		
+			android:orientation="horizontal">			
+
+			<Button
+				android:layout_height="wrap_content" 
+			 	android:layout_width="wrap_content" 
+			 	android:id="@+id/clear" 
+			 	android:text="@string/clear"/>
+			 	
+			<Button
+				android:layout_height="wrap_content" 
+				android:text="@string/create" 
+				android:layout_width="match_parent" 
+				android:id="@+id/create"/>
+				
+		</LinearLayout>
+	</LinearLayout>
+</ScrollView>

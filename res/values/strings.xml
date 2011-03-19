@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Transaktion erstellen</string>
+    <string name="money">Geldbetrag</string>
+    <string name="money_hint">0.00€</string>
+    <string name="category">Was</string>
+    <string name="category_hint">Kategorie/Konto</string>
+    <string name="create">Anlegen</string>
+    <string name="receiver">Empfänger</string>
+    <string name="payer">Auszahlender</string>
+    <string name="person">Wer</string>
+    <string name="date">Wann</string>
+    <string name="revenue">Einnahme</string>
+    <string name="expense">Ausgabe</string>
+    <string name="clear">Leeren</string>
+    <string name="comment">Kommentar</string>
+    <string name="comment_hint">Beschreibung der Transaktion</string>
+    
+    <string-array name="categories">
+        <item>Döner</item>
+        <item>Mensa</item>
+        <item>Pizza</item>
+        <item>Lebensmittel</item>
+        <item>Drinks</item>
+        <item>Restaurant</item>
+        <item>Büromaterial</item>
+        <item>Girokonto</item>
+    </string-array>
+    <string-array name="receiver">
+        <item>Lidl</item>
+        <item>Dönerladen</item>
+        <item>Mensa</item>
+     </string-array>
+    <string-array name="payer">
+        <item>Konstantin Weitz</item>
+     </string-array>
+</resources>
