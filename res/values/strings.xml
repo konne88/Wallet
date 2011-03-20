@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Transaktion erstellen</string>
-    <string name="money">Geldbetrag</string>
-    <string name="money_hint">0.00€</string>
-    <string name="category">Was</string>
-    <string name="category_hint">Kategorie/Konto</string>
-    <string name="create">Anlegen</string>
-    <string name="receiver">Empfänger</string>
-    <string name="payer">Auszahlender</string>
-    <string name="person">Wer</string>
-    <string name="date">Wann</string>
-    <string name="revenue">Einnahme</string>
-    <string name="expense">Ausgabe</string>
-    <string name="clear">Leeren</string>
-    <string name="comment">Kommentar</string>
-    <string name="comment_hint">Beschreibung der Transaktion</string>
+    <string name="app_name">Wallet</string>
+    <string name="create_transaction">Create Transaction</string>
+    <string name="money">Amount</string>
+    <string name="money_hint">0.00</string>
+    <string name="category">What</string>
+    <string name="category_hint">Category/Account</string>
+    <string name="create">Create</string>
+    <string name="receiver">Receiver</string>
+    <string name="payer">Payer</string>
+    <string name="person">Who</string>
+    <string name="date">When</string>
+    <string name="revenue">Revenue</string>
+    <string name="expense">Expense</string>
+    <string name="clear">Clear</string>
+    <string name="comment">Description</string>
+    <string name="comment_hint">Transaction Description</string>
     
     <string-array name="categories">
         <item>Döner</item>

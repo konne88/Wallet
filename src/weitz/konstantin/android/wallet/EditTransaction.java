@@ -1,10 +1,11 @@
-package weitz.konstantin.android.helloworld;
+package weitz.konstantin.android.wallet;
 
 import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.TimePickerDialog;
 import android.os.Bundle;
+import android.text.InputFilter;
 import android.text.format.DateFormat;
 import android.text.format.Time;
 import android.view.View;
@@ -14,8 +15,10 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.TimePicker;
+
+// setup usb connection
+// http://developer.android.com/guide/developing/device.html#setting-up
 
 public class EditTransaction extends Activity implements DatePickerDialog.OnDateSetListener,
 	TimePickerDialog.OnTimeSetListener
@@ -107,6 +110,10 @@ public class EditTransaction extends Activity implements DatePickerDialog.OnDate
         time        = (Button) findViewById(R.id.time);
         clear       = (Button) findViewById(R.id.clear);
         comment     = (EditText) findViewById(R.id.comment);
+
+    	InputFilter[] filterArray = new InputFilter[1];	
+        filterArray[0] = new MoneyValueFilter();
+        money.setFilters(filterArray);
         
         categoriesAdapter = ArrayAdapter.createFromResource(this, R.array.categories, android.R.layout.simple_dropdown_item_1line);
         payerAdapter      = ArrayAdapter.createFromResource(this, R.array.payer, android.R.layout.simple_dropdown_item_1line);
@@ -168,10 +175,6 @@ public class EditTransaction extends Activity implements DatePickerDialog.OnDate
 	}
 
 	
-	
-	//    InputFilter[] filterArray = new InputFilter[1];	
-    //    filterArray[0] = new MoneyKeyListener();
-    //    ((EditText)findViewById(R.id.money)).setFilters(filterArray);
 
         
        // TextView tv = new TextView(this);
