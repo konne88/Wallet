@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE web-app
+    PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+    "http://java.sun.com/dtd/web-app_2_3.dtd">
+
+<web-app>
+  <!-- Servlets -->
+  <servlet>
+    <servlet-name>greetServlet</servlet-name>
+    <servlet-class>weitz.konstantin.walletbank.server.GreetingServiceImpl</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>greetServlet</servlet-name>
+    <url-pattern>/greet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>jsonServer</servlet-name>
+    <servlet-class>weitz.konstantin.walletbank.server.JsonServer</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>jsonServer</servlet-name>
+    <url-pattern>/json</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>logServer</servlet-name>
+    <servlet-class>weitz.konstantin.walletbank.server.LogServer</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>logServer</servlet-name>
+    <url-pattern>/log</url-pattern>
+  </servlet-mapping>
+  
+  <!-- Default page to serve -->
+  <welcome-file-list>
+    <welcome-file>Bank.html</welcome-file>
+  </welcome-file-list>
+
+  <servlet>
+    <servlet-name>OFXServlet</servlet-name>
+    <servlet-class>net.sf.ofx4j.server.OFXServlet</servlet-class>
+    <init-param>
+      <param-name>ofx-server-class</param-name>
+      <param-value>weitz.konstantin.walletbank.server.OfxServlet</param-value>
+    </init-param>
+    <!-- uncomment to use OFX v2
+    <init-param>
+      <param-name>ofx-version</param-name>
+      <param-value>2</param-value>
+    </init-param>
+    -->
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>OFXServlet</servlet-name>
+    <url-pattern>/ofx</url-pattern>
+  </servlet-mapping>
+  
+  <security-constraint>
+     <web-resource-collection>
+         <url-pattern>/ofx*</url-pattern>
+         <url-pattern>/json*</url-pattern>
+     </web-resource-collection>
+     <user-data-constraint>
+         <transport-guarantee>CONFIDENTIAL</transport-guarantee>
+     </user-data-constraint>
+  </security-constraint>
+</web-app>
