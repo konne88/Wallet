@@ -19,30 +19,34 @@ public final class R {
         public static final int icon=0x7f020000;
     }
     public static final class id {
-        public static final int category=0x7f070002;
-        public static final int clear=0x7f070007;
-        public static final int comment=0x7f070006;
-        public static final int create=0x7f070008;
-        public static final int date=0x7f070004;
-        public static final int in_out=0x7f070001;
-        public static final int money=0x7f070000;
-        public static final int partner=0x7f070003;
-        public static final int time=0x7f070005;
+        public static final int category=0x7f070004;
+        public static final int clear=0x7f070009;
+        public static final int comment=0x7f070008;
+        public static final int create=0x7f07000a;
+        public static final int date=0x7f070006;
+        public static final int in_out=0x7f070003;
+        public static final int money=0x7f070002;
+        public static final int partner=0x7f070005;
+        public static final int progressBar=0x7f070000;
+        public static final int progressText=0x7f070001;
+        public static final int time=0x7f070007;
     }
     public static final class layout {
-        public static final int main=0x7f030000;
+        public static final int load=0x7f030000;
+        public static final int main=0x7f030001;
     }
     public static final class string {
         public static final int app_name=0x7f040000;
         public static final int category=0x7f040004;
         public static final int category_hint=0x7f040005;
         public static final int clear=0x7f04000d;
-        public static final int comment=0x7f04000e;
-        public static final int comment_hint=0x7f04000f;
+        public static final int comment=0x7f04000f;
+        public static final int comment_hint=0x7f040010;
         public static final int create=0x7f040006;
         public static final int create_transaction=0x7f040001;
         public static final int date=0x7f04000a;
         public static final int expense=0x7f04000c;
+        public static final int loading=0x7f04000e;
         public static final int money=0x7f040002;
         public static final int money_hint=0x7f040003;
         public static final int payer=0x7f040008;
