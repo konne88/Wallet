@@ -21,23 +21,23 @@ public class JsonServer extends HttpServlet {
 	private static final Logger log = Logger.getLogger(JsonServer.class.getName());
 	
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) {
-		log.warning("Was called");
-		
 		try {
 			if (req.getUserPrincipal() == null){
-				log.warning("Not signed in");
-				
-				//return;
+				log.warning("User not signed in");
+				resp.setStatus(401);
+				return;
 			}
 
 			log.warning("Logged in");
 			
-			CashTransaction ct = new CashTransaction();
+			WalletTransaction ct = new WalletTransaction();
 			ct.user = req.getUserPrincipal().getName();
 			
 			JSONObject jo = (JSONObject)(new JSONTokener(req.getReader()).nextValue());
 			
-			ct.amount   = new BigDecimal(jo.getString("amount"));
+			new BigDecimal(jo.getString("amount"));
+			
+			ct.amount   = jo.getString("amount");
 			ct.partner  = jo.getString("partner");
 			ct.memo     = jo.getString("memo");
 			ct.account  = jo.getString("wallet");
@@ -52,32 +52,26 @@ public class JsonServer extends HttpServlet {
 					time.getInt("second"));
 			ct.when = cal.getTime();
 			
-			log.warning("Parsed");
-
-			ct.id       = "123";
-			ct.amount   = new BigDecimal(100);
-			ct.partner  = "partner";
-			ct.memo     = "memo";
-			ct.account  = "wallet";
-			ct.when     = new Date();
-			
-			log.warning("Parsed");
-
 			// store the transaction
+			ObjectifyService.register(WalletTransaction.class);
 			Objectify ofy = ObjectifyService.begin();
 			ofy.put(ct);
 			
-			log.warning("Put");
-			
+			return;
+		} catch (NumberFormatException e) {
+			log.warning("Amount is not a number");
 		} catch (ClassCastException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();			
-		} catch (JSONException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		} catch (IOException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
+			log.warning("Invalid JSON Format");
+		} catch (JSONException e) {
+			log.warning("Invalid JSON Format");
+		} catch (IllegalArgumentException e) {
+			log.warning("Invalid Date");
+		} catch (IOException e) {
+			log.warning("Some sort of internal IOException");
+			resp.setStatus(500);			
+			return;
 		}
+		
+		resp.setStatus(400);
 	}
 }

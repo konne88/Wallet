@@ -226,7 +226,7 @@ public class EditTransaction extends Activity implements DatePickerDialog.OnDate
 		transaction.putString("amount",money.getText().toString());
 		transaction.putString("memo",comment.getText().toString());
 		transaction.putString("partner",partner.getText().toString());
-		transaction.putString("wallet","default");
+		transaction.putString("wallet","0");
 		transaction.putBundle("when",when);
         
         intent.putExtra("transaction", transaction);

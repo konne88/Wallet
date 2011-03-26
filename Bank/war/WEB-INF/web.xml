@@ -4,17 +4,6 @@
     "http://java.sun.com/dtd/web-app_2_3.dtd">
 
 <web-app>
-  <!-- Servlets -->
-  <servlet>
-    <servlet-name>greetServlet</servlet-name>
-    <servlet-class>weitz.konstantin.walletbank.server.GreetingServiceImpl</servlet-class>
-  </servlet>
-  
-  <servlet-mapping>
-    <servlet-name>greetServlet</servlet-name>
-    <url-pattern>/greet</url-pattern>
-  </servlet-mapping>
-  
   <servlet>
     <servlet-name>jsonServer</servlet-name>
     <servlet-class>weitz.konstantin.walletbank.server.JsonServer</servlet-class>
@@ -35,17 +24,12 @@
     <url-pattern>/log</url-pattern>
   </servlet-mapping>
   
-  <!-- Default page to serve -->
-  <welcome-file-list>
-    <welcome-file>Bank.html</welcome-file>
-  </welcome-file-list>
-
   <servlet>
     <servlet-name>OFXServlet</servlet-name>
     <servlet-class>net.sf.ofx4j.server.OFXServlet</servlet-class>
     <init-param>
       <param-name>ofx-server-class</param-name>
-      <param-value>weitz.konstantin.walletbank.server.OfxServlet</param-value>
+      <param-value>weitz.konstantin.walletbank.server.OfxBankServer</param-value>
     </init-param>
     <!-- uncomment to use OFX v2
     <init-param>
